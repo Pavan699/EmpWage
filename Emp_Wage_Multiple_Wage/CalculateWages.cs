@@ -10,21 +10,27 @@ namespace Emp_Wage_Multiple_Wage
         int full_Time = 8;
         int perHour_Pay = 20;
         int part_Time = 4;
+        Random emp_random = new Random();
         public void check()
         {
-            Random emp_random = new Random();
-            int empcheck = emp_random.Next(0, 2);
-            if (empcheck == 1)
+            
+            int empcheck = emp_random.Next(0, 3);
+            switch (empcheck)
             {
-                Console.WriteLine("It's Work-Type is : Full-Time");
-                oneDay_Sal = full_Time * perHour_Pay;                
+                case 1:
+                    Console.WriteLine("It's Work-Type is : Full-Time");
+                    oneDay_Sal = full_Time * perHour_Pay;
+                    Console.WriteLine("One Day Salary is : {0}", oneDay_Sal);
+                    break;
+                case 2:
+                    Console.WriteLine("It's Work-Type is : Part-Time");
+                    oneDay_Sal = part_Time * perHour_Pay;
+                    Console.WriteLine("One Day Salary is : {0}", oneDay_Sal);
+                    break;
+                default:
+                    Console.WriteLine(" Employee is Absent...");
+                    break;
             }
-            else
-            {
-                Console.WriteLine("It's Work-Type is : Part-Time");
-                oneDay_Sal = part_Time * perHour_Pay;                
-            }
-            Console.WriteLine("One Day Salary is : {0}", oneDay_Sal);
         }
     }
 }
