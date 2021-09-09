@@ -7,30 +7,37 @@ namespace Emp_Wage_Multiple_Wage
     class CalculateWages
     {
         int oneDay_Sal = 0;
-        int full_Time = 8;
         int perHour_Pay = 20;
-        int part_Time = 4;
+        int max_WorkDay = 20;
+        int perhour;
+        int tot_Workhours = 0;
+        int tot_Wage = 0;
+        
         Random emp_random = new Random();
         public void check()
         {
-            
-            int empcheck = emp_random.Next(0, 3);
-            switch (empcheck)
+            int day = 1;
+            while (day <= max_WorkDay)
             {
-                case 1:
-                    Console.WriteLine("It's Work-Type is : Full-Time");
-                    oneDay_Sal = full_Time * perHour_Pay;
-                    Console.WriteLine("One Day Salary is : {0}", oneDay_Sal);
-                    break;
-                case 2:
-                    Console.WriteLine("It's Work-Type is : Part-Time");
-                    oneDay_Sal = part_Time * perHour_Pay;
-                    Console.WriteLine("One Day Salary is : {0}", oneDay_Sal);
-                    break;
-                default:
-                    Console.WriteLine(" Employee is Absent...");
-                    break;
+                int empcheck = emp_random.Next(0, 3);
+                switch (empcheck)
+                {
+                    case 1:
+                        perhour = 8;
+                        break;
+                    case 2:
+                        perhour = 4;
+                        break;
+                    default:
+                        perhour = 0;
+                        break;
+                }
+                day++;
+                oneDay_Sal = perhour * perHour_Pay;
+                tot_Workhours = tot_Workhours + perhour;
             }
+            tot_Wage = tot_Workhours * perHour_Pay;
+            Console.WriteLine("Total Wage For Month is : " + tot_Wage);
         }
     }
 }
