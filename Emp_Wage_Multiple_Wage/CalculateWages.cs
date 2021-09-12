@@ -4,7 +4,13 @@ using System.Text;
 
 namespace Emp_Wage_Multiple_Wage
 {
-    class CalculateWages
+    public interface WageMethods
+    {
+        public void check(string cmp_name, int cmp_num, int max_WorkDay, int tot_MaxHours);
+
+        public void print();
+    }
+    class CalculateWages : WageMethods
     {   
         //Class Variables
         public int oneDay_Sal = 0;
@@ -42,13 +48,13 @@ namespace Emp_Wage_Multiple_Wage
                 oneDay_Sal = perhour * perHour_Pay;                
                 tot_Workhours = tot_Workhours + perhour;
             }
-            Console.WriteLine();
+            // Console.WriteLine();
             tot_Wage = tot_Workhours * perHour_Pay;
-            //Displaying the Wages And Information for Comapnies
-            Console.WriteLine("Comapny Name is : " + cmp_name);            
-            Console.WriteLine("Comapny Number is : " + cmp_num);
-            Console.WriteLine("Total Wage  For Month is : " + tot_Wage);            
-            Console.WriteLine("Total Hours For Month is : " + tot_Workhours);
+            // Displaying the Wages And Information for Comapnies
+            // Console.WriteLine("Comapny Name is : " + cmp_name);            
+            // Console.WriteLine("Comapny Number is : " + cmp_num);
+            // Console.WriteLine("Total Wage  For Month is : " + tot_Wage);            
+            // Console.WriteLine("Total Hours For Month is : " + tot_Workhours);
             cmp_names[i] = cmp_name;
             cmp_wages[i] = tot_Wage;
             i++;

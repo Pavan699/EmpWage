@@ -9,7 +9,7 @@ namespace Emp_Wage_Multiple_Wage
         {
             Console.WriteLine("Multiple Company Wages ::");
             //Object for CalculateWages class 
-            CalculateWages cal = new CalculateWages();
+            WageMethods cal = new CalculateWages();
             //calling check method
             cal.check("Bridge-Lab", 144, 24, 100); //("Company Name", Company_Number, Work_Days, Work_Hours)
             cal.check("Capgi", 234, 20, 80);
