@@ -10,10 +10,13 @@ namespace Emp_Wage_Multiple_Wage
         public int oneDay_Sal = 0;
         public int perHour_Pay = 20;        
         public int perhour;       
-        public int tot_Wage = 0;      
+        public int tot_Wage = 0;
+        string[] cmp_names = new string[4];
+        int[] cmp_wages = new int[4];
+        public int i = 0;
         
         //Inbuild Random Function Object creation 
-        Random emp_random = new Random();
+        public Random emp_random = new Random();
         //check method for implimentation
         public void check(string cmp_name, int cmp_num, int max_WorkDay , int tot_MaxHours)
         {
@@ -42,10 +45,23 @@ namespace Emp_Wage_Multiple_Wage
             Console.WriteLine();
             tot_Wage = tot_Workhours * perHour_Pay;
             //Displaying the Wages And Information for Comapnies
-            Console.WriteLine("Comapny Name is : " + cmp_name);
+            Console.WriteLine("Comapny Name is : " + cmp_name);            
             Console.WriteLine("Comapny Number is : " + cmp_num);
-            Console.WriteLine("Total Wage  For Month is : " + tot_Wage);
+            Console.WriteLine("Total Wage  For Month is : " + tot_Wage);            
             Console.WriteLine("Total Hours For Month is : " + tot_Workhours);
+            cmp_names[i] = cmp_name;
+            cmp_wages[i] = tot_Wage;
+            i++;
+        }
+        
+        public void print()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Comapny Names And It's Wages ::");
+            for (int i = 0;i < cmp_names.Length; i++ )
+            {
+                Console.WriteLine("Company Name : "+ cmp_names[i] +" And its Wage : "+ cmp_wages[i]);
+            }
         }
     }
 }

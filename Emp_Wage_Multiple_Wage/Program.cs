@@ -15,6 +15,7 @@ namespace Emp_Wage_Multiple_Wage
             cal.check("Capgi", 234, 20, 80);
             cal.check("TATA", 001, 26, 120);
             cal.check("Wipro", 004, 22, 105);
+            cal.print();
         }
     }
 }
